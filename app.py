@@ -17,11 +17,16 @@ def display_resultaten():
         checkbox_s = ('stam' in request.form.keys())
         checkbox_f = ('Function' in request.form.keys())
         if filteren == "":
-            rows = Database.database()
+            list_protein_name, list_lineage, list_description = Database.database()
         else:
-            rows = Database.database_filter(filteren, checkbox_p, checkbox_s,
+            list_protein_name, list_lineage, list_description = Database.database_filter(filteren, checkbox_p, checkbox_s,
                                             checkbox_f)
-        return render_template("Resultaten.html", filter=filteren, rows=rows)
+        length = list(range(len(list_protein_name)))
+        return render_template("Resultaten.html", filter=filteren,
+                               length=length,
+                               list_protein_name=list_protein_name,
+                               list_lineage=list_lineage,
+                               list_description=list_description)
     else:
         return render_template("Resultaten.html")
 

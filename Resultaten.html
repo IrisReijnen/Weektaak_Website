@@ -35,11 +35,11 @@
         <th>Stam</th>
         <th>Function</th>
     </tr>
-    {% for row in rows %}
+    {% for num in length %}
         <tr>
-            <td>{{ row[0] }}</td>
-            <td>{{ row[1] }}</td>
-            <td>{{ row[2] }}</td>
+            <td> {{ list_protein_name[num] }}</td>
+            <td>{{ list_lineage[num] }}</td>
+            <td>{{ list_description[num] }}</td>
         </tr>
     {% endfor %}
 </table>
