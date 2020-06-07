@@ -29,7 +29,8 @@ def database():
 
 
 def database_filter(filter, checkbox_p, checkbox_s, checkbox_f, checkbox_o):
-    """Filtert in de database volgens
+    """Filtert in de database op het zoekwoord in kolommen die gevinkt 
+    waren op de Resultaten pagina.
 
     :param filter: Een string waarop gefilterd wordt
     :param checkbox_p: Een boolean of er wel of niet gefilterd wordt in
